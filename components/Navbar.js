@@ -4,16 +4,14 @@ import { useContext } from "react";
 import AuthContext from "../stores/authContext";
 
 export default function Navbar() {
-  const user = useContext(AuthContext);
+  const { user, login, logout } = useContext(AuthContext);
   console.log(user);
   return (
     <div className="container">
       <nav>
         <Image src="/rupee.png" width={50} height={48} />
-        <h1>Gaming Vibes</h1>
-        <p>
-          <h2>Netlify Identity</h2>
-        </p>
+        <h1>Gaming Vibes - Netlify Identity</h1>
+
         <ul>
           <li>
             <Link href="/">
@@ -24,6 +22,12 @@ export default function Navbar() {
             <Link href="/guides">
               <a>Guides</a>
             </Link>
+          </li>
+          <li onClick={login} className="btn">
+            Login / Signup
+          </li>
+          <li onClick={logout} className="btn">
+            Logout
           </li>
         </ul>
       </nav>
