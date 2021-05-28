@@ -12,41 +12,41 @@ export default function Navbar() {
         <Image src="/rupee.png" width={50} height={48} />
         <h1>Gaming Vibes - Netlify Identity</h1>
 
-        {/* {authReady && ( */}
-        <ul>
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/guides">
-              <a>Guides</a>
-            </Link>
-          </li>
-          {!user && (
-            <li onClick={login} className="btn">
-              Login / Signup
+        {authReady && (
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
             </li>
-          )}
-          {user && (
-            <li
-              style={{
-                color: "orange",
-                fontWeight: "bold",
-                textDecoration: "underline",
-              }}
-            >
-              {user.user_metadata.full_name}
+            <li>
+              <Link href="/guides">
+                <a>Guides</a>
+              </Link>
             </li>
-          )}
-          {user && (
-            <li onClick={logout} className="btn">
-              Logout
-            </li>
-          )}
-        </ul>
-        {/* )} */}
+            {!user && (
+              <li onClick={login} className="btn">
+                Login / Signup
+              </li>
+            )}
+            {user && (
+              <li
+                style={{
+                  color: "orange",
+                  fontWeight: "bold",
+                  textDecoration: "underline",
+                }}
+              >
+                {user.user_metadata.full_name}
+              </li>
+            )}
+            {user && (
+              <li onClick={logout} className="btn">
+                Logout
+              </li>
+            )}
+          </ul>
+        )}
       </nav>
       <div className="banner">
         <Image src="/banner.png" width={966} height={276} />
