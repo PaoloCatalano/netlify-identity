@@ -40,7 +40,6 @@ export const AuthContextProvider = ({ children }) => {
     //cleanup
     return () => {
       netlifyIdentity.off("login");
-      netlifyIdentity.off("logout");
     };
   }, []);
 
